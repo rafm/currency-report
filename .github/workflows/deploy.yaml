@@ -36,3 +36,4 @@ jobs:
           SMTP_USERNAME: ${{ vars.SMTP_USERNAME }}
           SMTP_FROM_EMAIL: ${{ vars.SMTP_FROM_EMAIL }}
           SMTP_TO_EMAIL: ${{ vars.SMTP_TO_EMAIL }}
+          SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
