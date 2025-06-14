@@ -14,6 +14,8 @@ provider:
   memorySize: 512
   versionFunctions: false
   logRetentionInDays: 14
+  deploymentBucket:
+    maxPreviousDeploymentArtifacts: 2
   environment:
     DRY_RUN: ${param:dryRun, 'false'}
     SMTP_USERNAME: ${env:SMTP_USERNAME}
