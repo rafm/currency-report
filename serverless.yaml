@@ -16,6 +16,7 @@ provider:
   logRetentionInDays: 14
   deploymentBucket:
     maxPreviousDeploymentArtifacts: 2
+    versioning: false
   environment:
     DRY_RUN: ${param:dryRun, 'false'}
     SMTP_USERNAME: ${env:SMTP_USERNAME}
