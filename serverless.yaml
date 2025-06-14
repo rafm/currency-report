@@ -4,6 +4,7 @@ org: rafmdev
 app: currency-report
 # "service" is the name of this project. This will also be added to your AWS resource names.
 service: currency-report
+frameworkVersion: "^4.17.0"
 useDotenv: true
 
 provider:
