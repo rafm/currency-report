@@ -24,7 +24,7 @@ provider:
         - Effect: Allow
           Action:
             - ssm:GetParameter
-          Resource: arn:aws:ssm:us-east-1:771362849871:/smtp/gmail/pass-token
+          Resource: arn:aws:ssm:us-east-1:771362849871:parameter/smtp/gmail/pass-token
 
 functions:
   currency-report:
