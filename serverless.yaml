@@ -1,0 +1,41 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: rafmdev
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: currency-report
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: currency-report
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  versionFunctions: false
+  logRetentionInDays: 14
+  environment:
+    DRY_RUN: ${param:dryRun, 'false'}
+    SMTP_USERNAME: ${env:SMTP_USERNAME}
+    SMTP_FROM_EMAIL: ${env:SMTP_FROM_EMAIL}
+    SMTP_TO_EMAIL: ${env:SMTP_TO_EMAIL}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - ssm:GetParameter
+          Resource: arn:aws:ssm:us-east-1:771362849871:/smtp/gmail/pass-token
+
+functions:
+  currency-report:
+    handler: index.handler
+    events:
+      - schedule:
+          method: scheduler
+          rate: cron(0 18 ? * 2-6 *)
+          timezone: America/Sao_Paulo
+
+package:
+  patterns:
+    - '!.github/**'
+    - '!.editorconfig'
+    - '!serverless.yaml'
