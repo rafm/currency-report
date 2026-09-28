@@ -18,17 +18,15 @@ provider:
     maxPreviousDeploymentArtifacts: 2
     versioning: false
   environment:
-    DRY_RUN: ${param:dryRun, 'false'}
-    SMTP_USERNAME: ${env:SMTP_USERNAME}
-    SMTP_FROM_EMAIL: ${env:SMTP_FROM_EMAIL}
-    SMTP_TO_EMAIL: ${env:SMTP_TO_EMAIL}
+    DRY_RUN: ${param:DRY_RUN, 'false'}
+    AWESOME_API_TOKEN: ${env:AWESOME_API_TOKEN}
   iam:
     role:
       statements:
         - Effect: Allow
           Action:
             - ssm:GetParameter
-          Resource: arn:aws:ssm:us-east-1:771362849871:parameter/smtp/gmail/pass-token
+          Resource: arn:aws:ssm:us-east-1:771362849871:parameter/discord/bot/token
 
 functions:
   currency-report:

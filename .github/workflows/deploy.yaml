@@ -33,7 +33,6 @@ jobs:
 
       - run: serverless deploy --stage prod
         env:
-          SMTP_USERNAME: ${{ vars.SMTP_USERNAME }}
-          SMTP_FROM_EMAIL: ${{ vars.SMTP_FROM_EMAIL }}
-          SMTP_TO_EMAIL: ${{ vars.SMTP_TO_EMAIL }}
+          DISCORD_CHANNEL_ID: ${{ vars.DISCORD_CHANNEL_ID }}
+          AWESOME_API_TOKEN: ${{ secrets.AWESOME_API_TOKEN }}
           SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
