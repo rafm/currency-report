@@ -31,7 +31,7 @@ jobs:
           role-to-assume: arn:aws:iam::771362849871:role/github-oidc-lambda-deployer
           aws-region: us-east-1
 
-      - run: serverless deploy
+      - run: serverless deploy --stage prod
         env:
           SMTP_USERNAME: ${{ vars.SMTP_USERNAME }}
           SMTP_FROM_EMAIL: ${{ vars.SMTP_FROM_EMAIL }}
