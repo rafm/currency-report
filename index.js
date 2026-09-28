@@ -2,7 +2,7 @@ import { SSMClient, GetParametersCommand } from '@aws-sdk/client-ssm'
 
 const formatCoin = (data) => `${data.name}: ${data.bid} (alta: ${data.high} / baixa: ${data.low})`
 
-export async function handler() {
+export async function handler () {
   const isDryRun = process.env.DRY_RUN === 'true'
   const discordChannelId = process.env.DISCORD_CHANNEL_ID
   if (!isDryRun && !discordChannelId) {
