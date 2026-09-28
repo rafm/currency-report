@@ -30,6 +30,7 @@ provider:
 
 functions:
   currency-report:
+    name: currency-report-${sls:stage}
     handler: index.handler
     events:
       - schedule:
