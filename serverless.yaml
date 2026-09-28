@@ -20,6 +20,7 @@ provider:
   environment:
     DRY_RUN: ${param:DRY_RUN, 'false'}
     AWESOME_API_TOKEN: ${env:AWESOME_API_TOKEN}
+    DISCORD_CHANNEL_ID: ${env:DISCORD_CHANNEL_ID}
   iam:
     role:
       statements:
