@@ -6,6 +6,10 @@
   "author": "Rafael",
   "type": "module",
   "main": "index.js",
+  "engines": {
+    "node": ">=24",
+    "npm": ">=11"
+  },
   "scripts": {
     "start": "serverless invoke local --function currency-report --param=\"dryRun=true\""
   },
